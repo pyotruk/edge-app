@@ -1,9 +1,6 @@
 {
-  "name": "react-node-demo-app-api",
+  "name": "edge-app-api",
   "version": "1.0.0",
-  "description": "",
-  "author": "vldmr.me",
-  "license": "ISC",
   "main": "index.ts",
   "engines": {
     "npm": ">=8.0.0",

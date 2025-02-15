@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "mobx": "^6.13.6",
     "mobx-react-lite": "^4.1.0",
     "react": "^18.2.0",

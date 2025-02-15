@@ -53,7 +53,7 @@ class NotesStore {
   async updateNote(id: number, text: string): Promise<void> {
     try {
       await fetch(`${API_URL}/note`, {
-        method: "PATCH",
+        method: "PUT",
         headers: HTTP_HEADERS,
         body: JSON.stringify({id, text})
       });

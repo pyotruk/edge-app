@@ -27,7 +27,7 @@ export default {
             }
         });
 
-        app.patch("/note", async (req, res) => {
+        app.put("/note", async (req, res) => {
             const id = req.body?.id;
             try {
                 return res.json(await Note.update(

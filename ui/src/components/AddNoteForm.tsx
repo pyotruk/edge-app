@@ -1,11 +1,13 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import "./AddNoteForm.scss";
+import useStyles from './styles';
 
 interface AddNoteFormProps {
   postNote: (text: string) => Promise<void>;
 }
 
 export default function AddNoteForm(props: AddNoteFormProps) {
+  const classes = useStyles();
+
   const [text, setText] = useState<string>("");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -19,7 +21,7 @@ export default function AddNoteForm(props: AddNoteFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.form}>
       <input
         name="text"
         value={text}

@@ -1,12 +1,14 @@
-import "./Note.scss";
 import {NoteProps} from "store/NoteProps";
 import {useState, ChangeEvent, FormEvent} from "react";
+import useStyles from './styles';
 
 export default function Note(props: {
   note: NoteProps,
   updateNote: (id: number, text: string) => Promise<void>,
   deleteNote: (id: number) => Promise<void>,
 }) {
+  const classes = useStyles();
+
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
   const toggleIsEditing = () => {
@@ -35,7 +37,7 @@ export default function Note(props: {
   }
 
   return (
-    <p className="Note">
+    <p className={classes.note}>
       <b>#{ props.note.id }</b>&nbsp;
       {!isEditing &&
         <span>

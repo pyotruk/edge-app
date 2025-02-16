@@ -26,7 +26,7 @@ export default function Note(props: {
     try {
       await props.updateNote(props.note.id, text);
       setIsEditing(false);
-    } catch (e) {
+    } catch {
       setText(props.note.text);
     }
   }

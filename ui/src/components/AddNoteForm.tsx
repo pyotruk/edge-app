@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from 'react';
 import useStyles from './styles';
 
 interface AddNoteFormProps {
@@ -8,7 +8,7 @@ interface AddNoteFormProps {
 export default function AddNoteForm(props: AddNoteFormProps) {
   const classes = useStyles();
 
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState<string>('');
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
@@ -17,8 +17,8 @@ export default function AddNoteForm(props: AddNoteFormProps) {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     props.postNote(text);
-    setText("");
-  }
+    setText('');
+  };
 
   return (
     <form onSubmit={handleSubmit} className={classes.form}>

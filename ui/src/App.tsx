@@ -1,5 +1,5 @@
-import NotesList from "components/NotesList";
-import NotesStore from "./store/NotesStore";
+import NotesList from 'components/NotesList';
+import NotesStore from './store/NotesStore';
 import useStyles from './styles';
 
 const store = new NotesStore();

@@ -1,11 +1,11 @@
-import {NoteProps} from "store/NoteProps";
-import {useState, ChangeEvent, FormEvent} from "react";
+import { NoteProps } from 'store/NoteProps';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import useStyles from './styles';
 
 export default function Note(props: {
-  note: NoteProps,
-  updateNote: (id: number, text: string) => Promise<void>,
-  deleteNote: (id: number) => Promise<void>,
+  note: NoteProps;
+  updateNote: (id: number, text: string) => Promise<void>;
+  deleteNote: (id: number) => Promise<void>;
 }) {
   const classes = useStyles();
 
@@ -29,33 +29,33 @@ export default function Note(props: {
     } catch {
       setText(props.note.text);
     }
-  }
+  };
 
   const handleDelete = (event: FormEvent) => {
     event.preventDefault();
     props.deleteNote(props.note.id);
-  }
+  };
 
   return (
     <p className={classes.note}>
-      <b>#{ props.note.id }</b>&nbsp;
-      {!isEditing &&
+      <b>#{props.note.id}</b>&nbsp;
+      {!isEditing && (
         <span>
-          <span>{ text }</span>
+          <span>{text}</span>
           <i className="fa fa-pencil" onClick={toggleIsEditing}></i>
         </span>
-      }
-      {isEditing &&
+      )}
+      {isEditing && (
         <span>
           <input
             name="text"
-            value={ text }
+            value={text}
             onChange={handleTextChange}
             required
           />
           <i className="fa fa-check" onClick={handleUpdate}></i>
         </span>
-      }
+      )}
       <i className="fa fa-times" onClick={handleDelete}></i>
     </p>
   );

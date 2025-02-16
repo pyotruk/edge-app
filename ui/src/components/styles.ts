@@ -5,7 +5,7 @@ const useStyles = createUseStyles({
     '& i': {
       cursor: 'pointer',
       marginLeft: '1em',
-    }
+    },
   },
   form: {
     display: 'block',
@@ -19,8 +19,8 @@ const useStyles = createUseStyles({
       fontSize: '1em',
       boxSizing: 'content-box',
       marginRight: '1em',
-    }
-  }
+    },
+  },
 });
 
 export default useStyles;
